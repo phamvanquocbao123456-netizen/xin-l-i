@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#210810">
+<title>Gửi chị Lỉn ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; padding:28px 16px;
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 50% 35%,#641b31 0%,#2b0b18 48%,#090308 100%);
+  color:#ffe8ed; font-family:Georgia,serif;
+}
+.card{
+  width:min(760px,100%); padding:clamp(25px,6vw,52px);
+  border:1px solid rgba(255,190,205,.3); border-radius:24px;
+  background:rgba(15,2,9,.68);
+  box-shadow:0 0 55px rgba(255,65,115,.16);
+}
+h1{text-align:center;color:#ffb3c5;text-shadow:0 0 18px #ff527d;margin:0 0 30px;font-size:clamp(27px,5vw,38px)}
+#message{font-size:clamp(17px,2.6vw,20px);line-height:2;text-align:left;white-space:pre-wrap;min-height:250px}
+.heart{text-align:center;color:#ff668d;font-size:38px;margin-top:24px;animation:pulse 1.5s infinite}
+footer{text-align:center;color:#d9a3b1;font-style:italic;margin-top:18px;font-size:15px}
+@keyframes pulse{50%{transform:scale(1.2);text-shadow:0 0 22px #ff668d}}
+</style>
+</head>
+<body>
+<main class="card">
+  <h1>Gửi chị Lỉn ❤️</h1>
+  <div id="message" aria-live="polite"></div>
+  <div class="heart">♥</div>
+  <footer>Từ một thằng Tôm...</footer>
+</main>
+<script>
+const message = `Em xin lỗi chị Lỉn,
+
+Nếu em mà biết chị có thiện cảm với em từ đầu thì em đã không buông như vậy.
+
+Nếu có được cơ hội làm lại, em hứa với chị lần này em sẽ không còn một lần nào như vậy nữa.
+
+Mong chị tha thứ cho em. Em biết em chỉ là thằng chỉ biết nói lời xin lỗi thôi.
+
+Đây là lần em xin lỗi một người nào đó mà nó lại nằm trong thâm tâm em như vậy.
+
+Mong chị tha thứ cho những cái mà em làm trước kia.
+
+Từ một thằng Tôm quậy phá, tục tĩu, nhưng sau khi nhắn tin với chị thì em cũng rút ra được nhiều bài học để thay đổi bản thân em.
+
+Lần này chị cho em một cơ hội để thay đổi cục diện này được không ạ?
+
+Mong chị xem xét...
+
+Em thật lòng xin lỗi chị!`;
+
+const output = document.getElementById("message");
+const words = message.match(/\S+\s*/g) || [];
+let i = 0;
+function typeNext(){
+  if(i >= words.length) return;
+  output.textContent += words[i++];
+  setTimeout(typeNext, 1000/3); // khoảng 3 từ mỗi giây
+}
+typeNext();
+</script>
+</body>
+</html>
